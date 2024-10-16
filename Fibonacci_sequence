@@ -1,0 +1,28 @@
+def fibonacci_sequence():
+    """Gera a sequência de Fibonacci."""
+    sequence = [0, 1]
+    while True:
+        next_value = sequence[-1] + sequence[-2]
+        sequence.append(next_value)
+        yield sequence
+
+def is_in_fibonacci(num):
+    """Verifica se um número pertence à sequência de Fibonacci."""
+    fib_gen = fibonacci_sequence()
+    while True:
+        sequence = next(fib_gen)
+        if num in sequence:
+            return True
+        if sequence[-1] > num:
+            return False
+
+# Entrada do usuário
+while True:
+    try:
+        number = int(input("Informe um número: "))
+        if is_in_fibonacci(number):
+            print(f"O número {number} pertence à sequência de Fibonacci.")
+        else:
+            print(f"O número {number} não pertence à sequência de Fibonacci.")
+    except (ValueError, TypeError, RuntimeError) as e:
+        print(f"Erro: {e}. Por favor, insira um número inteiro válido.")
