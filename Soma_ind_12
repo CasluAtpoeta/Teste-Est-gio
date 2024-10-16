@@ -1,0 +1,15 @@
+def calcular_soma():
+    indice = 12
+    soma = 0
+    k = 1
+
+    while k < indice + 1:
+        soma += k
+        k += 1
+
+    return soma
+
+soma = calcular_soma()
+print("A soma é:", soma)
+
+Se executar o código a resposta será 77
