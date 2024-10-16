@@ -1,0 +1,8 @@
+def count_a_occurrences(s):
+    """Conta a quantidade de vezes que a letra 'a' ocorre em uma string."""
+    return s.lower().count('a')
+
+# Entrada do usuário
+string = input("Informe uma string: ")
+count = count_a_occurrences(string)
+print(f"A letra 'a' ocorre {count} vezes na string.")
